@@ -11,7 +11,7 @@ def division(a, b):
     if b != 0:
         return a / b
     else:
-        raise ValueError("Erreur : Division par zéro")
+        raise ValueError("Ne pas faire de division par zéro.")
 
 def calculatrice():
     try:
@@ -28,14 +28,13 @@ def calculatrice():
         elif operateur == '/':
             resultat = division(nombre1, nombre2)
         else:
-            raise ValueError("Erreur : Opérateur invalide")
+            raise ValueError("Opérateur invalide")
 
-        print(f"Le résultat de {nombre1} {operateur} {nombre2} est : {resultat}")
+        print(resultat)
 
-    except ValueError as e:
-        print(f"Erreur : {e}")
-    except Exception as e:
-        print(f"Une erreur inattendue s'est produite : {e}")
+    except ValueError:
+        print("Entrée invalide.")
+    except Exception:
+        print("Une erreur inattendue s'est produite.")
 
-if __name__ == "__main__":
-    calculatrice()
+calculatrice()
